@@ -7,8 +7,8 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: '*', // Replace with the correct port
-  credentials: true, // You may need this option if you're sending cookies or sessions
+  origin: 'https://aio-fn.vercel.app',
+  credentials: true,
 }));
 
 
