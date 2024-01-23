@@ -6,8 +6,10 @@ const app = express();
 // Middleware for parsing JSON
 app.use(express.json());
 
-app.use(cors());
-
+app.use(cors({
+  origin: '*', // Replace with the correct port
+  credentials: true, // You may need this option if you're sending cookies or sessions
+}));
 
 
 // MongoDB connection
