@@ -15,6 +15,11 @@ app.use(cors({
 }));
 
 
+app.use((req, res, next) => {
+  console.log(req.path, req.method)
+  next()
+})
+
 // MongoDB connection
 mongoose.connect('mongodb+srv://pavananna:Mongodb134@new.bes8xs6.mongodb.net/ap', {
   useNewUrlParser: true,
