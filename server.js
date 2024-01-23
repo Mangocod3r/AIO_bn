@@ -3,12 +3,15 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const app = express();
 
-// Middleware for parsing JSON
-app.use(express.json());
+// middleware
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+// app.use(cors())
 
+// Allow requests from the origin of your mobile app during development
 app.use(cors({
-  origin: 'https://aio-fn.vercel.app',
-  credentials: true,
+  origin: '*', // Replace with the correct port
+  credentials: true, // You may need this option if you're sending cookies or sessions
 }));
 
 
